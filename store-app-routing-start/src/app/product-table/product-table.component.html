@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+      <h3 appHighlight defaultColor="CORAL" highlightColor="ORANGERED">Product Table</h3>
+      <p appHighlight defaultColor="BLUE" highlightColor="GREEN">This Component displays list of products </p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- Product table comes here -->
+      <table class="table table-striped">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Available?</th>
+        </tr>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name | shorten : 15}}</td>
+          <td>{{ product.description | shorten : 25}}</td>
+          <td>{{ product.price | currency : 'INR':true}}</td>
+          <td>{{ product.isAvailable ? 'Yes': 'NO' }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
